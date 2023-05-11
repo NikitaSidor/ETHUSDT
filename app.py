@@ -95,7 +95,7 @@ while True:
     if start_price*100/end_price-100>=threshold and start_price*100/end_price-100<=-(threshold):
         print(console_green(f"\nВнимание ставка по таблице изменилась на {0}%".format(start_price*100/end_price-100)))
     print(table)  # Печатаем таблицу
-    new_percent = start_price*100/price[-1]-100
+    new_percent = price[-1]*100/start_price-100
     print("Изминение процента: {0}".format(new_percent))
     print(price_color(price))
     
