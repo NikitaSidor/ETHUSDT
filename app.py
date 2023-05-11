@@ -92,6 +92,8 @@ while True:
     if start_surveillance(price[-1]):
         table.add_row(create_row_table())
     system('cls||clear')
+    if start_price*100/end_price-100>=threshold and start_price*100/end_price-100<=-(threshold):
+        print(console_green(f"\nВнимание ставка по таблице изменилась на {0}%".format(start_price*100/end_price-100)))
     print(table)  # Печатаем таблицу
     new_percent = start_price*100/price[-1]-100
     print("Изминение процента: {0}".format(new_percent))
@@ -99,5 +101,5 @@ while True:
     
     print(f"Время обновления: {time.perf_counter() - start}")
     if new_percent>=threshold and new_percent<=-(threshold):
-        print(console_green(f"\nВнимание ставка изменилась на {0}".format(new_percent)))
+        print(console_green(f"\nВнимание ставка изменилась на {0}%".format(new_percent)))
         print(price[-1])
